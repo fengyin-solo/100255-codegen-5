@@ -3,6 +3,8 @@ from __future__ import annotations
 
 from typing import Any
 
+from app.renovation.seed import build_renovation_seed
+
 SEED_ROWS: dict[str, list[dict[str, Any]]] = {
     "interlock": [{'id': 1,
   'status': '正常',
@@ -725,3 +727,6 @@ SEED_ROWS: dict[str, list[dict[str, Any]]] = {
   '考核结果': '技能培训样例3',
   '培训状态': '技能培训样例3'}]
 }
+
+# 技术改造项目模块的示例数据单独维护，避免本文件被示例数据淹没
+SEED_ROWS.update(build_renovation_seed())

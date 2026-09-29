@@ -1,6 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
 import Dashboard from '@/views/Dashboard.vue'
+const Renovation = () => import('@/views/renovation/index.vue')
+const RenovationProposal = () => import('@/views/renovation/proposal.vue')
+const RenovationAcceptance = () => import('@/views/renovation/acceptance.vue')
 const Interlock = () => import('@/views/interlock/index.vue')
 const Trackcircuit = () => import('@/views/trackcircuit/index.vue')
 const Signal = () => import('@/views/signal/index.vue')
@@ -26,6 +29,9 @@ const router = createRouter({
   history: createWebHistory(),
   routes: [
     { path: '/', name: 'dashboard', component: Dashboard },
+    { path: '/renovation', name: 'renovation', component: Renovation },
+    { path: '/renovation/proposal', name: 'renovation-proposal', component: RenovationProposal },
+    { path: '/renovation/acceptance', name: 'renovation-acceptance', component: RenovationAcceptance },
     { path: '/interlock', name: 'interlock', component: Interlock },
     { path: '/trackcircuit', name: 'trackcircuit', component: Trackcircuit },
     { path: '/signal', name: 'signal', component: Signal },

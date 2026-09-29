@@ -9,6 +9,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.config import settings
+from app.renovation.router import router as renovation_router
 from app.routers import ROUTERS
 from app.store import store
 
@@ -24,6 +25,9 @@ app.add_middleware(
 
 for module in ROUTERS:
     app.include_router(module.router)
+
+# 技术改造项目：立项—审核—实施—投运验收的岗位权限与责任人归属
+app.include_router(renovation_router)
 
 
 @app.get("/api/health")
