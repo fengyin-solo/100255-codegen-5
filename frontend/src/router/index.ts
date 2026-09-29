@@ -21,11 +21,13 @@ const Fault = () => import('@/views/fault/index.vue')
 const Tool = () => import('@/views/tool/index.vue')
 const Regulation = () => import('@/views/regulation/index.vue')
 const Training = () => import('@/views/training/index.vue')
+const Transformation = () => import('@/views/transformation/index.vue')
 
 const router = createRouter({
   history: createWebHistory(),
   routes: [
     { path: '/', name: 'dashboard', component: Dashboard },
+    { path: '/transformation', name: 'transformation', component: Transformation },
     { path: '/interlock', name: 'interlock', component: Interlock },
     { path: '/trackcircuit', name: 'trackcircuit', component: Trackcircuit },
     { path: '/signal', name: 'signal', component: Signal },
